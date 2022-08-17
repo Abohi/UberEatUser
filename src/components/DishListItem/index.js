@@ -2,12 +2,12 @@ import {View, Text,StyleSheet,Image} from 'react-native';
 const DishListItem = ({dish})=>{
     return (
         <View style={styles.container}>
-            <View>
+            <View style={{flex:1}}>
             <Text style={styles.name}>{dish.name}</Text>
-            <Text style={styles.description}>{dish.description}</Text>
+            <Text style={styles.description} numberOfLines={2}>{dish.description}</Text>
             <Text style={styles.price}>${dish.price}</Text>
             </View>
-            <Image source={{uri:dish.image}} style={styles.image}/>
+            {dish.image && <Image source={{uri:dish.image}} style={styles.image}/>}
         </View>
     )
 }
@@ -20,6 +20,7 @@ const styles= StyleSheet.create({
         borderBottomColor:'lightgrey',
         borderBottomWidth:1,
         paddingBottom:10,
+        flexDirection:"row"
     },
     name:{
         fontWeight:'600',
@@ -32,5 +33,9 @@ const styles= StyleSheet.create({
     },
     price:{
         fontSize:16,
+    },
+    image:{
+        height:100,
+        aspectRatio:1,
     }
 });

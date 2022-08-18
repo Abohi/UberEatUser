@@ -3,12 +3,14 @@ import { StyleSheet, View,} from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 import RestaurantDetailScreen from './src/screens/RestaurantDetailsScreen';
 import DishDetailScreen from './src/screens/DishDetailScreen';
+import BasketScreen from './src/screens/Basket';
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <RestaurantDetailScreen/>
       <HomeScreen/> */}
-      <DishDetailScreen/>
+      {/* <DishDetailScreen/> */}
+      <BasketScreen/>
       <StatusBar style="auto" />
     </View>
   );

@@ -1,8 +1,10 @@
 import {View,Text,FlatList,Image} from "react-native";
 import orders from "../../../assets/data/orders.json";
+import restaurants from "../../../assets/data/restaurants.json";
+import BasketDishItem from "../Basket/basketdishitem";
 import styles from './styles';
 const order = orders[0];
-const OrderDetails=()=>{
+const OrderDetailsHeader=()=>{
     return (
         <View>
             <View>
@@ -16,6 +18,12 @@ const OrderDetails=()=>{
             </View>
         </View>
         </View>
+    )
+}
+const OrderDetails=()=>{
+    return (
+       <FlatList data={restaurants[0].dishes} renderItem={({item})=><BasketDishItem dishItem={item}/>}
+       ListHeaderComponent={OrderDetailsHeader}/>
     )
 }
 export default OrderDetails;

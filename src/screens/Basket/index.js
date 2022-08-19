@@ -10,7 +10,7 @@ const BasketScreen = ()=>{
         <Text style={basketstyle.name}>
             {restaurant.name}
         </Text>
-        <Text>Your items</Text>
+        <Text style={{fontWeight:"bold",marginTop:20,fontSize:19}}>Your items</Text>
         <FlatList data={restaurant.dishes} renderItem={({item})=><BasketDishItem dishItem={item}/>}/>
         <View style={basketstyle.separator}/>
         <View style={basketstyle.button}>
